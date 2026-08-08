@@ -60,7 +60,7 @@
 </div>
 
 <script>
-var BOOKS = [{"slug":"la-odisea","title":"La Odisea","author":"Homero","translator":"según Luis Segalá y Estalella","description":"El regreso de Odiseo a Ítaca tras la guerra de Troya. Edición de muestra con fragmentos de dominio público; reemplaza source.txt con el texto completo (Project Gutenberg #58221) y vuelve a ejecutar node publish.js.","cover":"🏛️","coverBg":"linear-gradient(160deg,#1f6f8b,#0b3d4d)","chapterCount":7,"words":824}];
+var BOOKS = [{"slug":"becquer-rimas","title":"Rimas (selección)","author":"Gustavo Adolfo Bécquer","translator":"","description":"Selección de las Rimas más conocidas del poeta sevillano, en dominio público. Ejemplo del modo verso del lector.","cover":"🕊️","coverBg":"linear-gradient(160deg,#6a3d7a,#241631)","chapterCount":6,"words":350},{"slug":"la-odisea","title":"La Odisea","author":"Homero","translator":"según Luis Segalá y Estalella","description":"El regreso de Odiseo a Ítaca tras la guerra de Troya. Edición de muestra con fragmentos de dominio público; reemplaza source.txt con el texto completo (Project Gutenberg #58221) y vuelve a ejecutar node publish.js.","cover":"🏛️","coverBg":"linear-gradient(160deg,#1f6f8b,#0b3d4d)","chapterCount":7,"words":824}];
 var grid = document.getElementById("grid");
 grid.innerHTML = BOOKS.map(function (b) {
   var author = [b.author, b.translator ? "trad. " + b.translator : ""].filter(Boolean).join(" · ");

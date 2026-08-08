@@ -1,0 +1,12 @@
+{
+  "title": "Rimas (selección)",
+  "author": "Gustavo Adolfo Bécquer",
+  "year": "1871",
+  "language": "es",
+  "cover": "🕊️",
+  "coverBg": "linear-gradient(160deg,#6a3d7a,#241631)",
+  "description": "Selección de las Rimas más conocidas del poeta sevillano, en dominio público. Ejemplo del modo verso del lector.",
+  "chapterPattern": "^RIMA\\b.*",
+  "verse": true,
+  "frontTitle": "Sobre esta selección"
+}
