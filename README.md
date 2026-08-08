@@ -115,15 +115,17 @@ elige este repositorio y usa:
 Cada `git push` publicará el sitio automáticamente en
 `https://biblioteca-abierta.pages.dev`.
 
-**Opción B — Despliegue automático con GitHub Actions.**
+**Opción B — GitHub Actions (alternativa manual).**
 Añade dos *secrets* al repo (*Settings → Secrets and variables → Actions*):
 
 - `CLOUDFLARE_API_TOKEN` — un token con el permiso *Cloudflare Pages: Edit*
 - `CLOUDFLARE_ACCOUNT_ID` — tu *Account ID* (panel de Cloudflare → *Workers & Pages*)
 
-El *workflow* `.github/workflows/deploy-cloudflare.yml` construye y despliega en
-cada *push* (o a mano desde la pestaña *Actions → Run workflow*). Crea el
-proyecto `biblioteca-abierta` la primera vez.
+Ejecuta el *workflow* `.github/workflows/deploy-cloudflare.yml` desde
+*Actions → Deploy to Cloudflare Pages → Run workflow*. Está configurado como
+manual para no fallar si faltan los *secrets*; añade un disparador `push:` si
+quieres que despliegue en cada *push*. (Si ya usas la Opción A, no necesitas
+esta.)
 
 **Opción C — Desde tu ordenador.**
 
