@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "node publish.js",
-    "deploy": "node publish.js && wrangler pages deploy"
+    "deploy": "node publish.js && wrangler deploy"
   },
   "files": [
     "publish.js",

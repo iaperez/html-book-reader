@@ -100,29 +100,31 @@ Como cada lector es un archivo estático, cualquier hosting sirve. Los enlaces
 entre la biblioteca y los libros son relativos, así que también funciona en un
 subdirectorio.
 
-### Cloudflare Pages
+### Cloudflare (Workers con recursos estáticos)
 
-El repositorio ya trae la configuración lista (`wrangler.jsonc` y un *workflow*
-de GitHub Actions). Elige **una** de estas tres formas:
+El sitio se despliega como un **Worker que sirve recursos estáticos** desde
+`dist/`. El repositorio ya trae `wrangler.jsonc` y un *workflow* de GitHub
+Actions listos. Elige **una** de estas tres formas:
 
 **Opción A — Conectar el repo (recomendada, sin secretos).**
-En el panel de Cloudflare: *Workers & Pages → Create → Pages → Connect to Git*,
-elige este repositorio y usa:
+En el panel de Cloudflare: *Workers & Pages → Create → Workers → Connect to Git*
+(o *Import a repository*), elige este repositorio y usa:
 
 - *Build command*: `node publish.js`
-- *Build output directory*: `dist`
+- El Worker toma los archivos de `dist/` gracias a `wrangler.jsonc`
+  (`assets.directory`); no hace falta indicar carpeta de salida.
 
-Cada `git push` publicará el sitio automáticamente en
-`https://biblioteca-abierta.pages.dev`.
+Cada `git push` reconstruye y publica en
+`https://biblioteca-abierta.<tu-subdominio>.workers.dev`.
 
 **Opción B — GitHub Actions (alternativa manual).**
 Añade dos *secrets* al repo (*Settings → Secrets and variables → Actions*):
 
-- `CLOUDFLARE_API_TOKEN` — un token con el permiso *Cloudflare Pages: Edit*
+- `CLOUDFLARE_API_TOKEN` — un token con permiso para editar Workers
 - `CLOUDFLARE_ACCOUNT_ID` — tu *Account ID* (panel de Cloudflare → *Workers & Pages*)
 
 Ejecuta el *workflow* `.github/workflows/deploy-cloudflare.yml` desde
-*Actions → Deploy to Cloudflare Pages → Run workflow*. Está configurado como
+*Actions → Deploy to Cloudflare → Run workflow*. Está configurado como
 manual para no fallar si faltan los *secrets*; añade un disparador `push:` si
 quieres que despliegue en cada *push*. (Si ya usas la Opción A, no necesitas
 esta.)
@@ -131,12 +133,12 @@ esta.)
 
 ```bash
 npx wrangler login          # abre el navegador para autenticarte
-npm run deploy              # genera dist/ y lo sube a Cloudflare Pages
+npm run deploy              # genera dist/ y despliega el Worker
 ```
 
-> El nombre del proyecto (`biblioteca-abierta`) y, por tanto, el subdominio
-> `*.pages.dev`, se cambian en `wrangler.jsonc`. Puedes añadir un dominio propio
-> desde el panel de Cloudflare, en el proyecto → *Custom domains*.
+> El nombre del Worker (`biblioteca-abierta`) y, por tanto, el subdominio
+> `*.workers.dev`, se cambian en `wrangler.jsonc`. Puedes añadir un dominio
+> propio desde el Worker → *Settings → Domains & Routes*.
 
 ### GitHub Pages
 
@@ -148,7 +150,7 @@ publicando esa carpeta en la rama `gh-pages`).
 ```
 html-book-reader/
 ├── publish.js                 ← generador (Node, sin dependencias)
-├── wrangler.jsonc             ← configuración de Cloudflare Pages
+├── wrangler.jsonc             ← configuración del Worker de Cloudflare
 ├── .github/workflows/         ← despliegue automático a Cloudflare
 ├── library.json               ← título y lema de la biblioteca
 ├── src/

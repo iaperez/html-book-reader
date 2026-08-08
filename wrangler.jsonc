@@ -1,9 +1,14 @@
 {
-  // Cloudflare Pages project configuration.
-  // `name` is the Pages project; the site will be served at
-  // https://<name>.pages.dev  (you can attach a custom domain later).
+  // Cloudflare Worker that serves the generated static site.
+  // "Connect to Git" builds the repo with `node publish.js` and this Worker
+  // serves everything in dist/ as static assets — no server code needed.
+  //
+  // The site is served at  https://<name>.<your-subdomain>.workers.dev
+  // (attach a custom domain later from the Worker's Settings → Domains).
   "name": "biblioteca-abierta",
-  // The publisher writes the finished, self-contained HTML into dist/.
-  // With this set, `wrangler pages deploy` needs no extra arguments.
-  "pages_build_output_dir": "dist"
+  "compatibility_date": "2025-06-01",
+  // publish.js writes the finished, self-contained HTML here.
+  "assets": {
+    "directory": "./dist"
+  }
 }

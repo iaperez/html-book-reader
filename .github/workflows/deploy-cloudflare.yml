@@ -1,6 +1,6 @@
-name: Deploy to Cloudflare Pages
+name: Deploy to Cloudflare
 
-# Builds the readers and deploys dist/ to Cloudflare Pages.
+# Builds the readers and deploys the Worker (from wrangler.jsonc) serving dist/.
 #
 # This is an OPTIONAL alternative to Cloudflare's "Connect to Git" integration.
 # It is manual-only (Actions tab → "Run workflow") so it never fails silently
@@ -30,10 +30,10 @@ jobs:
       - name: Build readers
         run: node publish.js
 
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # Creates the "biblioteca-abierta" Pages project on first run.
-          command: pages deploy dist --project-name=biblioteca-abierta
+          # Deploys the Worker defined in wrangler.jsonc, serving dist/.
+          command: deploy
