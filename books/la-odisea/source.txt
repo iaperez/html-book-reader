@@ -1,0 +1,94 @@
+Esta es una edición de MUESTRA. Contiene únicamente fragmentos de apertura de
+algunos cantos de La Odisea, todos de dominio público, incluidos para demostrar
+el lector. Para publicar la obra completa, sustituye este archivo por el texto
+íntegro —por ejemplo, el de Project Gutenberg n.º 58221 (traducción de Luis
+Segalá y Estalella)— y vuelve a ejecutar «node publish.js». El publicador
+detecta automáticamente los encabezados «CANTO …» y separa los capítulos.
+
+
+CANTO I
+
+Háblame, Musa, de aquel varón de multiforme ingenio que, después de destruir la
+sagrada ciudad de Troya, anduvo peregrinando larguísimo tiempo, vio las ciudades
+y conoció las costumbres de muchos hombres y padeció en su ánimo gran número de
+trabajos en su navegación por el ponto, en cuanto procuraba salvar su vida y la
+vuelta de sus compañeros a la patria.
+
+Mas ni aun así pudo librarlos, como deseaba, y todos perecieron por sus propias
+locuras. ¡Insensatos! Devoraron las vacas de Helios, hijo de Hiperión, el cual
+no les permitió que llegara el día del regreso. ¡Oh diosa, hija de Zeus!,
+cuéntanos aunque no sea más que una parte de tales cosas.
+
+Ya en aquel entonces los que habían podido escapar de una muerte horrorosa
+estaban en sus hogares, salvos de los peligros de la guerra y del mar; y
+solamente Odiseo, que tan gran necesidad sentía de volver a su patria y de ver a
+su esposa, hallábase retenido en hueca gruta por Calipso, la ninfa veneranda, la
+divina entre las deidades, que anhelaba tomarlo por marido.
+
+
+CANTO V
+
+Levantábase la Aurora del lecho, dejando al ilustre Titono, para llevar la luz a
+los inmortales y a los mortales, cuando los dioses se sentaron a deliberar. Con
+ellos hallábase Zeus, que truena en las alturas y a todos aventaja en poder.
+Atenea les recordaba las muchas fatigas de Odiseo, porque le tenía compasión de
+que permaneciese en la morada de la ninfa.
+
+Y Zeus, que amontona las nubes, le respondió: «¡Hija!, ¿qué palabras se te
+escaparon del cerco de los dientes? ¿Acaso no dispusiste tú misma que Odiseo
+volviera y se vengara de aquellos hombres? Guía con prudencia a Telémaco, ya que
+puedes hacerlo, para que llegue incólume a su patria y los pretendientes se
+vuelvan en su nave sin haber logrado nada.»
+
+
+CANTO IX
+
+Respondióle el ingenioso Odiseo: «¡Rey Alcínoo, el más esclarecido de todos los
+ciudadanos! En verdad es cosa bella escuchar a un aedo como éste, cuya voz se
+asemeja a la de una deidad. No creo que haya cosa tan agradable como ver a un
+pueblo entero poseído por la alegría.
+
+»Pero tu ánimo se inclinó a preguntarme por mis luctuosos trabajos, para que
+llore y me lamente todavía más. ¿Qué narraré primero, qué después, siendo tantos
+los infortunios que me enviaron los dioses? Mas ea, os diré mi nombre, para que
+lo sepáis: soy Odiseo Laertíada, tan conocido de los hombres por mis astucias,
+que mi gloria llega hasta el cielo.»
+
+
+CANTO XII
+
+Tan pronto como la nave dejó la corriente del río Océano y llegó al oleaje del
+mar de vastos caminos y a la isla Eea —donde están la mansión y las danzas de la
+Aurora, hija de la mañana, y el orto de Helios—, la varamos en la arena, saltamos
+a la playa y allí nos dormimos, aguardando a la divinal Aurora.
+
+Después, cuando mostró sus dedos de rosa la Aurora, hija de la mañana, mandé a
+algunos compañeros a la morada de Circe para que trajesen el cadáver del difunto
+Elpénor. Y la maga nos advirtió de los peligros: primero llegaríamos a las
+Sirenas, que encantan a cuantos hombres se les acercan.
+
+
+CANTO XXII
+
+Entonces el sagaz Odiseo se despojó de sus andrajos, saltó al gran umbral con el
+arco y el carcaj lleno de flechas, y lo vertió a sus pies, diciendo a los
+pretendientes: «Ya terminó este certamen infalible. Ahora veré si acierto en otro
+blanco que ningún hombre haya tocado todavía, y si Apolo me concede tal gloria.»
+
+Dijo, y dirigió una amarga flecha contra Antínoo. Iba éste a levantar una bella
+copa de oro, de dos asas, y ya la tenía en las manos para beber el vino, sin que
+el pensamiento de la muerte le turbara. La saeta se le clavó en la garganta, y
+cayó de espaldas, mientras la copa se le escapaba de la mano.
+
+
+CANTO XXIII
+
+Subió la anciana al piso superior, muy alegre, para anunciar a la señora que su
+esposo estaba dentro; y las rodillas le brincaban de gozo. Se detuvo junto a la
+cabeza de Penélope y le dijo: «Despierta, Penélope, hija querida, para que veas
+con tus propios ojos lo que anhelabas todos los días. Odiseo está en casa; ha
+llegado, aunque tarde, y ha dado muerte a los ilustres pretendientes.»
+
+Mas la discreta Penélope, incrédula todavía, bajó de la estancia con el corazón
+dividido entre hablar de lejos a su esposo o acercarse a besarle la cabeza y
+tomarle las manos. Largo rato permaneció sentada frente a él, muda de asombro.
