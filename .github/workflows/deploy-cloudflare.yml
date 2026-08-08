@@ -1,0 +1,40 @@
+name: Deploy to Cloudflare Pages
+
+# Builds the readers and deploys dist/ to Cloudflare Pages.
+# Runs automatically on every push to the branches below, and can be
+# triggered by hand from the Actions tab ("Run workflow").
+#
+# Requires two repository secrets (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN   — a token with the "Cloudflare Pages: Edit" permission
+#   CLOUDFLARE_ACCOUNT_ID  — your account ID (Cloudflare dashboard → Workers & Pages)
+
+on:
+  push:
+    branches:
+      - main
+      - claude/open-books-html-publisher-v4wbdy
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build readers
+        run: node publish.js
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Creates the "biblioteca-abierta" Pages project on first run.
+          command: pages deploy dist --project-name=biblioteca-abierta

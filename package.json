@@ -8,7 +8,8 @@
     "publish-books": "publish.js"
   },
   "scripts": {
-    "build": "node publish.js"
+    "build": "node publish.js",
+    "deploy": "node publish.js && wrangler pages deploy"
   },
   "files": [
     "publish.js",

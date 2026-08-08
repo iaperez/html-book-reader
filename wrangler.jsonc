@@ -1,0 +1,9 @@
+{
+  // Cloudflare Pages project configuration.
+  // `name` is the Pages project; the site will be served at
+  // https://<name>.pages.dev  (you can attach a custom domain later).
+  "name": "biblioteca-abierta",
+  // The publisher writes the finished, self-contained HTML into dist/.
+  // With this set, `wrangler pages deploy` needs no extra arguments.
+  "pages_build_output_dir": "dist"
+}

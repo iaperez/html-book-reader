@@ -96,15 +96,58 @@ traducción de Luis Segalá y Estalella) y vuelve a ejecutar `node publish.js`.
 
 ## Publicar en la web
 
-Como cada lector es un archivo estático, cualquier hosting sirve. Con GitHub
-Pages, por ejemplo, basta con servir la carpeta `dist/`. Los enlaces entre la
-biblioteca y los libros son relativos, así que funciona en un subdirectorio.
+Como cada lector es un archivo estático, cualquier hosting sirve. Los enlaces
+entre la biblioteca y los libros son relativos, así que también funciona en un
+subdirectorio.
+
+### Cloudflare Pages
+
+El repositorio ya trae la configuración lista (`wrangler.jsonc` y un *workflow*
+de GitHub Actions). Elige **una** de estas tres formas:
+
+**Opción A — Conectar el repo (recomendada, sin secretos).**
+En el panel de Cloudflare: *Workers & Pages → Create → Pages → Connect to Git*,
+elige este repositorio y usa:
+
+- *Build command*: `node publish.js`
+- *Build output directory*: `dist`
+
+Cada `git push` publicará el sitio automáticamente en
+`https://biblioteca-abierta.pages.dev`.
+
+**Opción B — Despliegue automático con GitHub Actions.**
+Añade dos *secrets* al repo (*Settings → Secrets and variables → Actions*):
+
+- `CLOUDFLARE_API_TOKEN` — un token con el permiso *Cloudflare Pages: Edit*
+- `CLOUDFLARE_ACCOUNT_ID` — tu *Account ID* (panel de Cloudflare → *Workers & Pages*)
+
+El *workflow* `.github/workflows/deploy-cloudflare.yml` construye y despliega en
+cada *push* (o a mano desde la pestaña *Actions → Run workflow*). Crea el
+proyecto `biblioteca-abierta` la primera vez.
+
+**Opción C — Desde tu ordenador.**
+
+```bash
+npx wrangler login          # abre el navegador para autenticarte
+npm run deploy              # genera dist/ y lo sube a Cloudflare Pages
+```
+
+> El nombre del proyecto (`biblioteca-abierta`) y, por tanto, el subdominio
+> `*.pages.dev`, se cambian en `wrangler.jsonc`. Puedes añadir un dominio propio
+> desde el panel de Cloudflare, en el proyecto → *Custom domains*.
+
+### GitHub Pages
+
+Sirve la carpeta `dist/` (por ejemplo con la acción oficial de Pages, o
+publicando esa carpeta en la rama `gh-pages`).
 
 ## Estructura del proyecto
 
 ```
 html-book-reader/
 ├── publish.js                 ← generador (Node, sin dependencias)
+├── wrangler.jsonc             ← configuración de Cloudflare Pages
+├── .github/workflows/         ← despliegue automático a Cloudflare
 ├── library.json               ← título y lema de la biblioteca
 ├── src/
 │   ├── reader.template.html    ← plantilla del lector
